@@ -217,7 +217,7 @@ contract ERC1967Factory {
         bytes32 salt,
         bool useSalt,
         bytes calldata data
-    ) internal returns (address proxy) {
+    ) internal virtual returns (address proxy) {
         bytes memory m = _initCode();
         /// @solidity memory-safe-assembly
         assembly {
