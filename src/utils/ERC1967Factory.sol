@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
+/// @dev The caller is not authorized to call the function.
+/// Note: Moved Unauthorized() out of contract to avoid conflicts with ../auth/Ownable.sol
+error Unauthorized();
+
 /// @notice Factory for deploying and managing ERC1967 proxy contracts.
 /// @author Solady (https://github.com/vectorized/solady/blob/main/src/utils/ERC1967Factory.sol)
 /// @author jtriley-eth (https://github.com/jtriley-eth/minimum-viable-proxy)
@@ -8,9 +12,6 @@ contract ERC1967Factory {
     /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
     /*                       CUSTOM ERRORS                        */
     /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-    /// @dev The caller is not authorized to call the function.
-    error Unauthorized();
 
     /// @dev The proxy deployment failed.
     error DeploymentFailed();
